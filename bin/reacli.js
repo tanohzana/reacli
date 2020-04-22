@@ -19,7 +19,7 @@ const createElement = async ({ firstParam = null, pathsToComponentsToCreate = []
 
 		if (validatePath(path) && validateName(path)) {
 			try {
-				if (firstParam === "component") {
+				if (firstParam === "component" || firstParam === "c") {
 					promises.push(createComponent(path, options))
 				} else if (firstParam === "hook") {
 					promises.push(createHook(path, options))
@@ -40,6 +40,7 @@ const outputHelpDetails = () => {
 	console.log("")
 	console.log("Commands:")
 	console.log("  component [path(s)] [options]")
+	console.log("  c [path(s)] [options]")
 	console.log("  hook [path(s)] [options]")
 	console.log("")
 	console.log("Examples:")
